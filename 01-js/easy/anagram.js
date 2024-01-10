@@ -5,6 +5,16 @@
 */
 
 function isAnagram(str1, str2) {
+  
+  let normalize = function(str) {
+    return str.replace(/[^a-z\d]/gi, '').toLowerCase().split('').sort().join('');
+  };
+
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  return normalize(str1) === normalize(str2);
 
 }
 
